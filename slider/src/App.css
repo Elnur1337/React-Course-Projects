@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  color: #333;
+  padding: 15px;
+}
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sliderContainer {
+  width: 800px;
+  height: 300px;
+  border-radius: 7px;
+  border: 1px solid
+    rgba(210, 210, 210, 0.2);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 /
+          0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+.slide {
+  width: calc(100% - 100px);
+  height: 270px;
+  text-align: center;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: transform 500ms linear,
+    left 500ms linear,
+    opacity 400ms ease-in-out;
+}
+.userAvatar {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 /
+          0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  margin-bottom: 15px;
+}
+.userName {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.userReview {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.quoteIcon {
+  color: #333;
+  font-size: 4rem;
+}
+.activeSlide {
+  transform: translateX(0);
+  opacity: 1;
+}
+.lastSlide {
+  transform: translateX(-110%);
+}
+.nextSlide {
+  transform: translateX(130%);
+}
+.prevNextBtn {
+  position: absolute;
+  font-size: 2rem;
+  background: rgba(210, 210, 210, 0.4);
+  padding: 5px;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+}
+.prevNextBtn:active {
+  transform: scale(0.95);
+}
+.prevBtn {
+  top: 50%;
+  left: 15px;
+}
+.nextBtn {
+  top: 50%;
+  right: 15px;
+}
